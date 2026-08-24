@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=28&duration=2500&pause=1200&color=FFFFFF&center=true&vCenter=true&width=500&lines=sqzass;that+pretty+mf.;i+jest!;jester;uhh+i+forgot;customprofile+saved+my+eyes"
+  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=28&duration=2500&pause=1200&color=FFFFFF&center=true&vCenter=true&width=500&lines=sqzass;i+jest!;jester;uhh+i+forgot;7xvn+enjoyer.;doik...+sub?!;customprofile+saved+my+eyes;chat+i+fixed+/avatar"
        alt="sqzass" />
 </div>
 
@@ -13,7 +13,7 @@
 
 ──✝──
 
-</div>
+</div align="center">
 
 ### about
 
@@ -30,7 +30,7 @@
 
 ### elsewhere
 
-[site](https://sqzass.pages.dev) / [github](https://github.com/sqzass)
+[site](https://sqzass.pages.dev) / [github](https://github.com/sqzass) / [spotify (shared)](https://open.spotify.com/user/31fo2ge5jfjc5qukbekhpxcfw7sm)
 
 <br />
 <br />
