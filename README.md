@@ -18,9 +18,9 @@
 <div align="center">
 <h2>about</h2>
 
-- i be sqzing azz
-- contributor of questionable plugins to [doiksub](https://millyrack.pages.dev)
-- professional jester
+i be sqzing azz
+contributor of questionable plugins to [doiksub](https://millyrack.pages.dev)
+professional jester
 
 <h2>stuff</h2>
 
