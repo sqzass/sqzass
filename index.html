@@ -11,7 +11,7 @@
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🃟</text></svg>">
     <style>
         :root {
-            color-scheme: light dark;
+            color-scheme: dark;
         }
 
         * {
@@ -26,8 +26,8 @@
         }
 
         body {
-            background: #fff;
-            color: #000;
+            background: #000;
+            color: #fff;
             font-family: ui-monospace, "SF Mono", "Cascadia Code", Menlo, Consolas, monospace;
             font-size: 16px;
             line-height: 1.7;
@@ -49,11 +49,13 @@
         .rain i {
             position: absolute;
             display: block;
-            width: 1px;
-            height: var(--len);
-            background: currentColor;
+            color: #d40000;
+            font-style: normal;
+            font-size: var(--fs);
+            line-height: 2;
             opacity: var(--op);
-            transform: rotate(-20deg);
+            /* 180 = upside down cross, adding more keeps the slant. negative cuz it matches the direction better */
+            transform: rotate(-200deg);
             animation: fall var(--dur) linear var(--delay) infinite;
             will-change: left, top;
         }
@@ -72,7 +74,7 @@
 
         /* i love that i can name tags whatever i want */
         pbutcooler {
-            background: linear-gradient(to right, #868686, #fff);
+            background: linear-gradient(to right, hwb(0 0% 68%), hwb(0 0% 30%));
             /* FUCK webkit... cough amen */
             -webkit-background-clip: text;
             /* i dont think i need webkit if i have this..? fuck it we ball */
@@ -91,6 +93,8 @@
             z-index: 1;
             max-width: 42ch;
             width: 100%;
+            /* everything lives on the midline now */
+            text-align: center;
         }
 
         footer {
@@ -100,7 +104,7 @@
             right: 0;
             text-align: center;
             font-size: 0.75rem;
-            color: #888;
+            color: #666;
             z-index: 1;
         }
 
@@ -111,33 +115,26 @@
         }
 
         .abtme {
-            color: #555;
+            color: #999;
             /* doesnt look as good as i thought it would, leave in comment for later i guess */
             /* text-indent: 1rem; */
             margin-bottom: 1rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* actual status text. parent keeps it centered, js just fades it */
+        .abtme span {
+            display: inline-block;
+            transition: opacity 0.3s ease;
         }
 
         a {
-            color: #000;
+            color: #fff;
         }
 
-        @media (prefers-color-scheme: dark) {
-            body {
-                background: #000;
-                color: #fff;
-            }
-
-            .tagline {
-                color: #aaa;
-            }
-
-            a {
-                color: #fff;
-            }
-
-            footer {
-                color: #555;
-            }
+        a:hover {
+            color: #d40000;
         }
     </style>
 </head>
@@ -145,14 +142,13 @@
 <body>
     <div class="rain" id="rain" aria-hidden="true"></div>
     <main>
-        <pbutcooler>sqzass</pbutcooler>
-        <p class="abtme">that pretty mf.</p>
+        <pbutcooler>sqzass<span class="nose" aria-hidden="true"></span></pbutcooler>
+        <p class="abtme"><span>that pretty mf.</span></p>
         <p>worked on <a href="https://millyrack.pages.dev">doiksub</a>.</p> <!-- send to docs instead of github -->
         <p>github: <a href="https://github.com/sqzass">@sqzass</a>.</p>
     </main>
     <footer>
-        <p>do you remember...? the rain..?</p>
-        <p>press g to hide text if you like the rain.</p>
+        <p>press g to hide text if you like the 'rain'.</p>
     </footer>
     <script>
         const rain = document.getElementById("rain");
@@ -167,12 +163,13 @@
 
         for (let i = 0; i < count; i++) {
             const drop = document.createElement("i");
+            drop.textContent = "✝"; // it is raining men crosses. hallelujah.
 
-            const len = 30 + Math.random() * 90;
             // fidget with this. high num means more cozy, lower is the opposite. thunderstorm maybe? :eyes:
             // yo i am NOT fucking doing a thunderstorm. ion hate myself that much.
             const dur = 1.5 + Math.random() * 0.9;
 
+            const len = 12 + Math.random() * 14; // ~glyph size now, still used to seed spawns
             const drift = vh * Math.tan(angle);
             const x0 = -drift + Math.random() * (vw + drift);
             const y0 = -len - Math.random() * vh * 0.55;
@@ -187,10 +184,10 @@
             drop.style.setProperty("--y", y0 + "px");
             drop.style.setProperty("--dx", dx + "px");
             drop.style.setProperty("--dy", dy + "px");
-            drop.style.setProperty("--len", len + "px");
+            drop.style.setProperty("--fs", len + "px");
             drop.style.setProperty("--dur", dur + "s");
             drop.style.setProperty("--delay", (-Math.random() * dur) + "s");
-            drop.style.setProperty("--op", (0.2 + Math.random() * 0.3).toFixed(2));
+            drop.style.setProperty("--op", (0.1 + Math.random() * 0.25).toFixed(2));
 
             // thank god for yt tutorials
             rain.appendChild(drop);
@@ -202,24 +199,43 @@
             "uhh i forgot",
             "7xvn enjoyer.", // goated artist - agreed
             "doik... sub?!",
-            "customprofile saved my eyes"
+            "customprofile saved my eyes",
+            "click me",
+            "chat i fixed /avatar"
         ];
 
         const abtmeEl = document.querySelector(".abtme");
         if (abtmeEl) {
+            const statusEl = abtmeEl.querySelector("span");
+
             let abtmeIndex = Math.floor(Math.random() * abtmeTexts.length);
-            abtmeEl.textContent = abtmeTexts[abtmeIndex];
+            statusEl.textContent = abtmeTexts[abtmeIndex];
 
             abtmeEl.style.cursor = "help"; // subtle
-            abtmeEl.style.transition = "opacity 0.5s ease";
+
+            let swapping = false; // no double honking mid-animation
 
             abtmeEl.addEventListener("click", () => {
-                abtmeEl.style.opacity = "0";
+                if (swapping) return;
+                swapping = true;
+
+                // fade out...
+                statusEl.style.opacity = "0";
+
                 setTimeout(() => {
+                    // ...swap while invisible (parent re-centers it for free)...
                     abtmeIndex = (abtmeIndex + 1) % abtmeTexts.length;
-                    abtmeEl.textContent = abtmeTexts[abtmeIndex];
-                    abtmeEl.style.opacity = "1";
-                }, 500);
+                    statusEl.textContent = abtmeTexts[abtmeIndex];
+
+                    // ...and fade back in
+                    requestAnimationFrame(() => {
+                        statusEl.style.opacity = "1";
+
+                        setTimeout(() => {
+                            swapping = false;
+                        }, 300);
+                    });
+                }, 300);
             });
         }
 
