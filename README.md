@@ -19,7 +19,9 @@
 <h2>about</h2>
 
 i be sqzing azz
+<br>
 contributor of questionable plugins to [doiksub](https://millyrack.pages.dev)
+<br>
 professional jester
 
 <h2>stuff</h2>
