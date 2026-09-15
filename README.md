@@ -46,6 +46,7 @@ professional jester
 ──✝──
 
 <samp><sub>queen and jester</sub></samp>
+<br />
 <samp><sub><i>forever</i></sub></samp>
 
 </div>
