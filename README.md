@@ -5,6 +5,8 @@
 
 <div align="center">
   <samp>the pretty mf behind the crosses.</samp>
+  <!-- for not being religious, there's a lot of crosses -->
+  <!-- :thinking: -->
 </div>
 
 <br />
@@ -44,6 +46,7 @@ professional jester
 ──✝──
 
 <samp><sub>queen and jester</sub></samp>
+<samp><sub><i>forever</i></sub></samp>
 
 </div>
 <!-- honk. -->
