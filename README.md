@@ -32,10 +32,11 @@ professional jester
 |-------|------|-------|
 | doiksub | yet another discord mod | [millyrack.pages.dev](https://millyrack.pages.dev) |
 | sqzass | this page. that's it. | right here. |
+| sigilism | profile page like guns.lol but worse | [github](https://github.com/sqzass/sigilism) / [site](https://sigilism.pages.dev/sqz/)
 
 <h2>elsewhere</h2>
 
-[site](https://sqzass.pages.dev) / [github](https://github.com/sqzass) / [spotify (shared)](https://open.spotify.com/user/31fo2ge5jfjc5qukbekhpxcfw7sm)
+[site](https://sqzass.pages.dev) / [email](mailto://333@qrypty.com) / [spotify (shared)](https://open.spotify.com/user/31fo2ge5jfjc5qukbekhpxcfw7sm)
 </div>
 
 <br />
